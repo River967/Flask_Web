@@ -11,3 +11,8 @@ views = Blueprint("views", __name__)
 @views.route("index")
 def home():
     return render_template("home.html")
+
+# Gallery route
+@views.route("/gallery")
+def gallery():
+    return render_template("home.html")
