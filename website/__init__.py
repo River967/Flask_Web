@@ -17,18 +17,18 @@ def create_app():
 
     # Import views from views.py
     from .views import views
-    #from .auth import auth
+    from .auth import auth
 
 
     # Register blueprints
     app.register_blueprint(views, url_prefix="/")
-    #app.register_blueprint(auth, url_prefix="/")
+    app.register_blueprint(auth, url_prefix="/")
 
     from .model import User
 
     with app.app_context():
         db.create_all()
-        
+
 
 
     return app
