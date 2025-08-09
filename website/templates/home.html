@@ -1,224 +1,212 @@
 {% extends "template.html" %} {% block title %} Home {% endblock %}
 
 {% block content %}
+<style>
+    .agent-card {
+        transition: all 0.3s ease;
+        cursor: pointer;
+        border: none;
+        background: transparent;
+    }
+    .agent-card:hover {
+        transform: scale(1.05);
+        filter: drop-shadow(0 0 10px rgba(255, 70, 85, 0.7));
+    }
+    .agent-img-container {
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 3px solid #FF4655;
+        background: white;
+        padding: 5px;
+        box-shadow: 0 0 10px rgba(255,255,255,0.3);
+    }
+    .agent-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+    .agent-name {
+        margin-top: 15px;
+        color: white;
+        font-size: 1.3rem;
+        font-weight: 600;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    }
+    .bg-dark {
+        background-color: #0F1923 !important; /* Valorant dark blue */
+    }
+</style>
 
-        <!-- Header-->
-        <header class="bg-dark py-5">
-            <div class="container px-4 px-lg-5 my-5">
-                <div class="text-center text-white">
-                    <h1 class="display-4 fw-bolder">Valorent Agent Guide</h1>
-                </div>
+<!-- Header-->
+<header class="bg-dark py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-white">
+            <h1 class="display-4 fw-bolder">Valorant Agent Guide</h1>
+            <p class="lead">Choose an agent to learn more</p>
+        </div>
+    </div>
+</header>
+
+<!-- Agents Grid -->
+<section class="py-5 bg-dark">
+    <div class="container px-4 px-lg-5 mt-5">
+        <div class="row gx-4 gx-lg-5 row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            <!-- All agents in consistent WebP format -->
+            <!-- Astra -->
+            <div class="col mb-5">
+                <a href="#" class="text-decoration-none">
+                    <div class="agent-card text-center">
+                        <div class="agent-img-container">
+                            <img class="agent-img" src="static/assets/img/Astra.webp" alt="Astra"/>
+                        </div>
+                        <h5 class="agent-name">Astra</h5>
+                    </div>
+                </a>
             </div>
-        </header>
-        <!-- Section-->
-        <section class="py-5">
-            <div class="container px-4 px-lg-5 mt-5">
-                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">Fancy Product</h5>
-                                    <!-- Product price-->
-                                    $40.00 - $80.00
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View options</a></div>
-                            </div>
+            
+            <!-- Breach -->
+            <div class="col mb-5">
+                <a href="#" class="text-decoration-none">
+                    <div class="agent-card text-center">
+                        <div class="agent-img-container">
+                            <img class="agent-img" src="static/assets/img/Breach.webp" alt="Breach"/>
                         </div>
+                        <h5 class="agent-name">Breach</h5>
                     </div>
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            <!-- Sale badge-->
-                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
-                            <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">Special Item</h5>
-                                    <!-- Product reviews-->
-                                    <div class="d-flex justify-content-center small text-warning mb-2">
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                    </div>
-                                    <!-- Product price-->
-                                    <span class="text-muted text-decoration-line-through">$20.00</span>
-                                    $18.00
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            <!-- Sale badge-->
-                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
-                            <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">Sale Item</h5>
-                                    <!-- Product price-->
-                                    <span class="text-muted text-decoration-line-through">$50.00</span>
-                                    $25.00
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">Popular Item</h5>
-                                    <!-- Product reviews-->
-                                    <div class="d-flex justify-content-center small text-warning mb-2">
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                    </div>
-                                    <!-- Product price-->
-                                    $40.00
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            <!-- Sale badge-->
-                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
-                            <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">Sale Item</h5>
-                                    <!-- Product price-->
-                                    <span class="text-muted text-decoration-line-through">$50.00</span>
-                                    $25.00
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">Fancy Product</h5>
-                                    <!-- Product price-->
-                                    $120.00 - $280.00
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View options</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            <!-- Sale badge-->
-                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
-                            <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">Special Item</h5>
-                                    <!-- Product reviews-->
-                                    <div class="d-flex justify-content-center small text-warning mb-2">
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                    </div>
-                                    <!-- Product price-->
-                                    <span class="text-muted text-decoration-line-through">$20.00</span>
-                                    $18.00
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">Popular Item</h5>
-                                    <!-- Product reviews-->
-                                    <div class="d-flex justify-content-center small text-warning mb-2">
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                    </div>
-                                    <!-- Product price-->
-                                    $40.00
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                </a>
             </div>
-        </section>
-        <!-- Footer-->
-        <footer class="py-5 bg-dark">
-            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p></div>
-        </footer>
+            
+            <!-- Cypher -->
+            <div class="col mb-5">
+                <a href="#" class="text-decoration-none">
+                    <div class="agent-card text-center">
+                        <div class="agent-img-container">
+                            <img class="agent-img" src="static/assets/img/Cypher.webp" alt="Cypher"/>
+                        </div>
+                        <h5 class="agent-name">Cypher</h5>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- Jett -->
+            <div class="col mb-5">
+                <a href="#" class="text-decoration-none">
+                    <div class="agent-card text-center">
+                        <div class="agent-img-container">
+                            <img class="agent-img" src="static/assets/img/Jett.webp" alt="Jett"/>
+                        </div>
+                        <h5 class="agent-name">Jett</h5>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- Killjoy -->
+            <div class="col mb-5">
+                <a href="#" class="text-decoration-none">
+                    <div class="agent-card text-center">
+                        <div class="agent-img-container">
+                            <img class="agent-img" src="static/assets/img/Killjoy.webp" alt="Killjoy"/>
+                        </div>
+                        <h5 class="agent-name">Killjoy</h5>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- Neon -->
+            <div class="col mb-5">
+                <a href="#" class="text-decoration-none">
+                    <div class="agent-card text-center">
+                        <div class="agent-img-container">
+                            <img class="agent-img" src="static/assets/img/Neon.webp" alt="Neon"/>
+                        </div>
+                        <h5 class="agent-name">Neon</h5>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- Omen -->
+            <div class="col mb-5">
+                <a href="#" class="text-decoration-none">
+                    <div class="agent-card text-center">
+                        <div class="agent-img-container">
+                            <img class="agent-img" src="static/assets/img/Omen.webp" alt="Omen"/>
+                        </div>
+                        <h5 class="agent-name">Omen</h5>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- Phoenix -->
+            <div class="col mb-5">
+                <a href="#" class="text-decoration-none">
+                    <div class="agent-card text-center">
+                        <div class="agent-img-container">
+                            <img class="agent-img" src="static/assets/img/Phoenix.webp" alt="Phoenix"/>
+                        </div>
+                        <h5 class="agent-name">Phoenix</h5>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- Raze -->
+            <div class="col mb-5">
+                <a href="#" class="text-decoration-none">
+                    <div class="agent-card text-center">
+                        <div class="agent-img-container">
+                            <img class="agent-img" src="static/assets/img/Raze.webp" alt="Raze"/>
+                        </div>
+                        <h5 class="agent-name">Raze</h5>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- Reyna -->
+            <div class="col mb-5">
+                <a href="#" class="text-decoration-none">
+                    <div class="agent-card text-center">
+                        <div class="agent-img-container">
+                            <img class="agent-img" src="static/assets/img/Reyna.webp" alt="Reyna"/>
+                        </div>
+                        <h5 class="agent-name">Reyna</h5>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- Sage -->
+            <div class="col mb-5">
+                <a href="#" class="text-decoration-none">
+                    <div class="agent-card text-center">
+                        <div class="agent-img-container">
+                            <img class="agent-img" src="static/assets/img/Sage.webp" alt="Sage"/>
+                        </div>
+                        <h5 class="agent-name">Sage</h5>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- Skye -->
+            <div class="col mb-5">
+                <a href="#" class="text-decoration-none">
+                    <div class="agent-card text-center">
+                        <div class="agent-img-container">
+                            <img class="agent-img" src="static/assets/img/Skye.webp" alt="Skye"/>
+                        </div>
+                        <h5 class="agent-name">Skye</h5>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
 
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
+<!-- Footer-->
+<footer class="py-5 bg-dark">
+    <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Valorant Agent Guide 2023</p></div>
+</footer>
 
+<script src="js/scripts.js"></script>
 {% endblock %}
