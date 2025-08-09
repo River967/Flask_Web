@@ -30,7 +30,7 @@ def sign_up():
             new_user = User(email=email, username=username, password=generate_password_hash(password1, method='scrypt:32768:8:1'))
             db.session.add(new_user)
             db.session.commit()
-            flash('Account created.', category='Success')
+            flash('Account created.', category='success')
 
     return render_template("sign_up.html", user = current_user)
 
@@ -42,4 +42,13 @@ def login():
         password = request.form.get('password')
         user = User.query.filter_by(email=email).first()
         if user:
-            if check_password_hash
+            if check_password_hash(user.password, password):
+                flash('Successfully logged in!', category='success')
+                return redirect(url_for('views.contact'))
+            else: 
+                flash('Incorrect Password.', category='error')
+        else: 
+            flash('Email does not exist!', category='error')
+    return render_template('login.html', user=current_user)
+
+
