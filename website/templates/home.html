@@ -2,6 +2,24 @@
 
 {% block content %}
 <style>
+    body {
+        background-image: url('static/assets/img/Background.webp');
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+    }
+    
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(15, 25, 35, 0.85);
+        z-index: -1;
+    }
+    
     .agent-card {
         transition: all 0.3s ease;
         cursor: pointer;
@@ -36,16 +54,22 @@
         font-weight: 600;
         text-shadow: 0 2px 4px rgba(0,0,0,0.5);
     }
-    .bg-dark {
-        background-color: #0F1923 !important; /* Valorant dark blue */
+    header.bg-dark, section.bg-dark, footer.bg-dark {
+        background-color: transparent !important;
+    }
+    .title-image {
+        max-width: 600px;
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
     }
 </style>
 
-<!-- Header-->
+<!-- Header with image title -->
 <header class="bg-dark py-5">
     <div class="container px-4 px-lg-5 my-5">
         <div class="text-center text-white">
-            <h1 class="display-4 fw-bolder">Valorant Agent Guide</h1>
+            <img src="static/assets/img/title.png" alt="Valorant Agent Guide" class="title-image">
             <p class="lead">Choose an agent to learn more</p>
         </div>
     </div>
@@ -55,7 +79,6 @@
 <section class="py-5 bg-dark">
     <div class="container px-4 px-lg-5 mt-5">
         <div class="row gx-4 gx-lg-5 row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-            <!-- All agents in consistent WebP format -->
             <!-- Astra -->
             <div class="col mb-5">
                 <a href="#" class="text-decoration-none">
@@ -109,7 +132,7 @@
                 <a href="#" class="text-decoration-none">
                     <div class="agent-card text-center">
                         <div class="agent-img-container">
-                            <img class="agent-img" src="static/assets/img/Killjoy.webp" alt="Killjoy"/>
+                            <img class="agent-img" src="static/assets/img/Killjoy.png" alt="Killjoy"/>
                         </div>
                         <h5 class="agent-name">Killjoy</h5>
                     </div>
@@ -193,7 +216,7 @@
                 <a href="#" class="text-decoration-none">
                     <div class="agent-card text-center">
                         <div class="agent-img-container">
-                            <img class="agent-img" src="static/assets/img/Skye.webp" alt="Skye"/>
+                            <img class="agent-img" src="static/assets/img/Skye.png" alt="Skye"/>
                         </div>
                         <h5 class="agent-name">Skye</h5>
                     </div>
