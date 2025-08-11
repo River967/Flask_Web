@@ -46,9 +46,31 @@
   </div>
 </nav>
 
+<!-- Start of Flash Messages Code-->
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          {% for category, message in messages %}
+          {% if category == "error" %}
+          <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            {{message}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+          </div>
+
+          {%else%}
+          <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{message}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+          </div>
+          {%endif%}
+          {%endfor%}
+        {%endif%}
+        {%endwith%}
+
+<!-- End of Flash Messages Code-->
 
 
-    <div class-"container"> {% block content %} {% endblock %}</div>
+    <div class="container"> {% block content %} {% endblock %}</div>
 
 
 
