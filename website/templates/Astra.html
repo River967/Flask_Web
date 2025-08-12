@@ -1,0 +1,46 @@
+{% extends "template.html" %}
+{% block title %}Astra - Valorant Wiki{% endblock %}
+
+{% block content %}
+<div class="row align-items-center">
+    <div class="col-md-4 text-center mb-4 mb-md-0">
+        <img src="{{ url_for('static', filename='assets/img/astra.png') }}" alt="Astra" class="img-fluid rounded shadow" style="max-height: 320px;">
+    </div>
+    <div class="col-md-8">
+        <h1 class="mb-2" style="color:#FF4655;">Astra</h1>
+        <h4 class="mb-3" style="color:#ECE8E1;">The Cosmic Controller</h4>
+        <p>
+            Astra is an Agent in Valorant, hailing from Ghana. She is a Controller who uses her cosmic powers to reshape the battlefield, placing stars and activating them for different effects. Astra excels at map control and strategic play, making her a favorite for coordinated teams.
+        </p>
+        <ul class="list-unstyled">
+            <li><strong>Role:</strong> Controller</li>
+            <li><strong>Origin:</strong> Ghana</li>
+            <li><strong>Release Date:</strong> March 2, 2021</li>
+        </ul>
+    </div>
+</div>
+
+<hr class="my-4" style="border-color:#FF4655;">
+
+<div class="row">
+    <div class="col-md-12">
+        <h2 style="color:#FF4655;">Abilities</h2>
+        <div class="mb-3">
+            <strong style="color:#ECE8E1;">C - Gravity Well</strong>
+            <p>Place a Star. Activate to pull players toward the center before it explodes, making all players in the area fragile.</p>
+        </div>
+        <div class="mb-3">
+            <strong style="color:#ECE8E1;">Q - Nova Pulse</strong>
+            <p>Place a Star. Activate to concuss all players in the area after a brief delay.</p>
+        </div>
+        <div class="mb-3">
+            <strong style="color:#ECE8E1;">E - Nebula / Dissipate</strong>
+            <p>Place a Star. Activate to transform it into a smoke (Nebula). Dissipate temporarily removes a Star, which can be placed again after a delay.</p>
+        </div>
+        <div class="mb-3">
+            <strong style="color:#ECE8E1;">X - Astral Form / Cosmic Divide</strong>
+            <p>Enter Astral Form to place Stars. Use Cosmic Divide to create a massive wall that blocks bullets and dampens audio.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -53,3 +53,8 @@ def delete_note():
             db.session.delete(note)
             db.session.commit()
     return jsonify({})
+
+# Astra wiki route
+@views.route("/astra")
+def astra():
+    return render_template("Astra.html", user=current_user)
