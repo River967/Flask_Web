@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, url_for, request, flash, redirect
+from flask import Blueprint, render_template, url_for, request, flash, redirect, jsonify, json
 from flask_login import login_user, login_required, logout_user, current_user
 from .model import User, Note
 from . import db
@@ -37,3 +37,15 @@ def contact():
             flash('Comment Added!', category='success')
 
     return render_template("contact.html", user=current_user)  # Added user
+
+@views.route('/delete-note', methods=['POST'])
+@login_required
+def delete_note():
+    note = json.loads(request.data)
+    note_id = note['noteId']
+    note = Note.query.get(note_id)
+    if note:
+        if note.user_id == current_user.id:
+            db.session.delete(note)
+            db.session.commit()
+    return jsonify({})

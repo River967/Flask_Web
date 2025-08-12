@@ -1,25 +1,41 @@
-{% extends "template.html" %} {% block title %} Content {% endblock %}
-
+{% extends "template.html" %} 
+{% block title %} Content {% endblock %}
 
 {% block content %}
-
-<h1 align="center"> Content </h1>
+<h1 align="center">Content</h1>
 
 <ul class="list-group list-group-flush" id="notes">
     {% for note in user.notes %}
-        <li class="list-group-item">
-            {{ note.data }}
-        </li>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        {{ note.data }}
+        <button type="button" class="btn-close" onclick="deleteNote({{ note.id }})" aria-label="Delete"></button>
+    </li>
     {% endfor %}
 </ul>
 
-
 <form method="POST">
     <textarea name="note" id="note" class="form-control"></textarea>
-    </br>
+    <br>
     <div align="center">
-        <button type="submit" class-"btn btn-primary">Add Comment</button>
+        <button type="submit" class="btn btn-primary">Add Comment</button>
     </div>
 </form>
 
+<script>
+function deleteNote(noteId) {
+    fetch("/delete-note", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ noteId: noteId }),
+    }).then(response => {
+        if (response.ok) {
+            window.location.reload();
+        } else {
+            alert("Failed to delete note");
+        }
+    });
+}
+</script>
 {% endblock %}
