@@ -1,0 +1,69 @@
+{% extends "template.html" %} 
+{% block title %} About {% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card border-0 shadow" style="background-color: rgba(15, 25, 35, 0.8);">
+                <div class="card-body p-5">
+                    <h1 class="text-center mb-4 text-valorant-red">About Valorant Guide</h1>
+                    
+                    <div class="about-content text-white">
+                        <div class="mb-4">
+                            <h3 class="text-valorant-red mb-3"><i class="bi bi-info-circle-fill"></i> Our Mission</h3>
+                            <p>We provide the most comprehensive Valorant agent guides to help players of all skill levels improve their gameplay. Our team of experienced players analyzes every aspect of each agent to give you competitive advantage.</p>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <h3 class="text-valorant-red mb-3"><i class="bi bi-people-fill"></i> The Team</h3>
+                            <p>Founded by former professional players and game analysts, our team brings together years of tactical shooter experience to create accurate, up-to-date guides as the meta evolves.</p>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <h3 class="text-valorant-red mb-3"><i class="bi bi-patch-check-fill"></i> Why Trust Us?</h3>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="bi bi-check-circle text-valorant-red"></i> Data-driven analysis</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-valorant-red"></i> Regular updates with each patch</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-valorant-red"></i> Strategies used by top-ranked players</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-valorant-red"></i> Community-voted recommendations</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="text-center mt-5">
+                            <a href="/contact" class="btn btn-valorant btn-lg px-4">
+                                <i class="bi bi-envelope-fill"></i> Contact Us
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .text-valorant-red {
+        color: #FF4655;
+    }
+    
+    .btn-valorant {
+        background-color: #FF4655;
+        color: white;
+        border: none;
+        transition: all 0.3s;
+    }
+    
+    .btn-valorant:hover {
+        background-color: #BD3944;
+        color: white;
+        transform: translateY(-2px);
+    }
+    
+    .about-content h3 {
+        border-bottom: 2px solid #FF4655;
+        padding-bottom: 8px;
+        display: inline-block;
+    }
+</style>
+{% endblock %}

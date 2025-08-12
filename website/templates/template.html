@@ -99,6 +99,9 @@
                     <li class="nav-item">
                         <a class="nav-link {{ 'active' if active_page == 'contact' }}" href="/contact">Contact</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ 'active' if active_page == 'about' }}" href="/about">About</a>
+                    </li>
                 </ul>
                 <ul class="navbar-nav">
                     {% if current_user.is_authenticated %}
@@ -111,6 +114,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{ 'active' if active_page == 'sign-up' }}" href="/sign-up">Sign Up</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ 'active' if active_page == 'about' }}" href="/about">About</a>
                     </li>
                     {% endif %}
                 </ul>

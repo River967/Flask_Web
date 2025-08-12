@@ -21,6 +21,10 @@ def home():
 def gallery():
     return render_template("gallery.html", user=current_user)  # Added user
 
+@views.route("/about")
+def about():
+    return render_template("about.html", user=current_user)  # Added user
+
 
 # Contact route
 @views.route("/contact", methods=['POST', 'GET'])
