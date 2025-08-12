@@ -8,29 +8,32 @@ from . import db
 views = Blueprint("views", __name__)
 
 
-# Deafult/Home route
+# Default/Home route
 @views.route("/")
-@views.route("home")
-@views.route("index")
+@views.route("/home")  # Fixed: Added missing /
+@views.route("/index")  # Fixed: Added missing /
 def home():
-    return render_template("home.html")
+    return render_template("home.html", user=current_user)  # Added user
+
 
 # Gallery route
 @views.route("/gallery")
 def gallery():
-    return render_template("gallery.html")
+    return render_template("gallery.html", user=current_user)  # Added user
 
+
+# Contact route
 @views.route("/contact", methods=['POST', 'GET'])
 @login_required
 def contact():
     if request.method == 'POST':
         note = request.form.get('note')
         if len(note) < 1:
-            flash('Comment cannot be blank!')
+            flash('Comment cannot be blank!', category='error')  # Added category
         else: 
             new_note = Note(data=note, user_id=current_user.id)
             db.session.add(new_note)
             db.session.commit()
             flash('Comment Added!', category='success')
 
-    return render_template("contact.html")
+    return render_template("contact.html", user=current_user)  # Added user
