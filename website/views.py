@@ -4,44 +4,42 @@ from .model import User, Note
 from . import db
 
 
-# Set blueprint
+# Set up the blueprint for views
 views = Blueprint("views", __name__)
 
 
-# Default/Home route
+# Home page routes
 @views.route("/")
-@views.route("/home")  # Fixed: Added missing /
-@views.route("/index")  # Fixed: Added missing /
+@views.route("/home")  
+@views.route("/index")  
 def home():
-    return render_template("home.html", user=current_user)  # Added user
+    # Render the home page
+    return render_template("home.html", user=current_user)  
 
-
-# Gallery route
-@views.route("/gallery")
-def gallery():
-    return render_template("gallery.html", user=current_user)  # Added user
-
+# About page route
 @views.route("/about")
 def about():
-    return render_template("about.html", user=current_user)  # Added user
+    # Render the about page
+    return render_template("about.html", user=current_user)  
 
-
-# Contact route
+# Contact page route (requires login)
 @views.route("/contact", methods=['POST', 'GET'])
 @login_required
 def contact():
+    # Handle comment submission
     if request.method == 'POST':
         note = request.form.get('note')
         if len(note) < 1:
-            flash('Comment cannot be blank!', category='error')  # Added category
+            flash('Comment cannot be blank!', category='error')  
         else: 
             new_note = Note(data=note, user_id=current_user.id)
             db.session.add(new_note)
             db.session.commit()
             flash('Comment Added!', category='success')
+    # Render the contact page
+    return render_template("contact.html", user=current_user) 
 
-    return render_template("contact.html", user=current_user)  # Added user
-
+# Delete note route (AJAX, requires login)
 @views.route('/delete-note', methods=['POST'])
 @login_required
 def delete_note():
@@ -54,7 +52,65 @@ def delete_note():
             db.session.commit()
     return jsonify({})
 
+# Agent wiki routes
+
 # Astra wiki route
 @views.route("/astra")
 def astra():
+    # Render the Astra agent wiki page
     return render_template("Astra.html", user=current_user)
+
+@views.route("/breach")
+def breach():
+    # Render the Breach agent wiki page
+    return render_template("Breach.html", user=current_user)
+
+@views.route("/cypher")
+def cypher():
+    # Render the Cypher agent wiki page
+    return render_template("Cypher.html", user=current_user)
+
+@views.route("/jett")
+def jett():
+    # Render the Jett agent wiki page
+    return render_template("Jett.html", user=current_user)
+
+@views.route("/killjoy")
+def killjoy():
+    # Render the Killjoy agent wiki page
+    return render_template("Killjoy.html", user=current_user)
+
+@views.route("/neon")
+def neon():
+    # Render the Neon agent wiki page
+    return render_template("Neon.html", user=current_user)
+
+@views.route("/omen")
+def omen():
+    # Render the Omen agent wiki page
+    return render_template("Omen.html", user=current_user)
+
+@views.route("/phoenix")
+def phoenix():
+    # Render the Phoenix agent wiki page
+    return render_template("Phoenix.html", user=current_user)
+
+@views.route("/raze")
+def raze():
+    # Render the Raze agent wiki page
+    return render_template("Raze.html", user=current_user)
+
+@views.route("/reyna")
+def reyna():
+    # Render the Reyna agent wiki page
+    return render_template("Reyna.html", user=current_user)
+
+@views.route("/sage")
+def sage():
+    # Render the Sage agent wiki page
+    return render_template("Sage.html", user=current_user)
+
+@views.route("/skye")
+def skye():
+    # Render the Skye agent wiki page
+    return render_template("Skye.html", user=current_user)

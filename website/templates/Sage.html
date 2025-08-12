@@ -1,0 +1,114 @@
+{% extends "template.html" %}
+{% block title %}Sage - Valorant Wiki{% endblock %}
+
+{% block content %}
+<!-- Back button -->
+<div class="container mb-4">
+    <a href="{{ url_for('views.home') }}" class="btn btn-valorant">
+        <i class="bi bi-arrow-left"></i> Back to Agents
+    </a>
+</div>
+
+<div class="container py-4">
+    <div class="row align-items-center">
+        <div class="col-md-5 text-center mb-4 mb-md-0">
+            <img src="{{ url_for('static', filename='assets/img/Sage.webp') }}" 
+                 alt="Sage Agent" 
+                 class="img-fluid agent-portrait rounded-circle border border-3 border-danger shadow-lg" 
+                 style="width: 350px; height: 350px; object-fit: cover; padding: 5px; background-color: #0F1923;">
+        </div>
+        <div class="col-md-7">
+            <h1 class="display-4 fw-bold" style="color:#FF4655;">Sage</h1>
+            <h3 class="mb-4" style="color:#ECE8E1;">The Radiant Sentinel</h3>
+            <p class="lead" style="color:#ECE8E1;">
+                The stronghold of China, Sage creates safety for herself and her team wherever she goes. Able to revive fallen friends and stave off aggressive pushes, she provides a calm center to a hellish fight.
+            </p>
+            <div class="agent-info" style="background-color: rgba(15, 25, 35, 0.7); padding: 1.5rem; border-radius: 8px;">
+                <ul class="list-unstyled">
+                    <li class="mb-2"><strong style="color:#FF4655;">Role:</strong> <span style="color:#ECE8E1;">Sentinel</span></li>
+                    <li class="mb-2"><strong style="color:#FF4655;">Origin:</strong> <span style="color:#ECE8E1;">China</span></li>
+                    <li class="mb-2"><strong style="color:#FF4655;">Release Date:</strong> <span style="color:#ECE8E1;">June 2, 2020</span></li>
+                    <li class="mb-2"><strong style="color:#FF4655;">Signature Ability:</strong> <span style="color:#ECE8E1;">Healing Orb</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <hr class="my-5" style="border-color:#FF4655; opacity: 0.5;">
+
+    <div class="row mt-4">
+        <div class="col-lg-12">
+            <h2 class="text-center mb-4" style="color:#FF4655;">Abilities</h2>
+            
+            <div class="row">
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="ability-card h-100 p-3" style="background-color: rgba(15, 25, 35, 0.7); border-radius: 8px; border-left: 4px solid #FF4655;">
+                        <h4 style="color:#FF4655;">Barrier Orb (C)</h4>
+                        <p style="color:#ECE8E1;">Conjure a large, solid wall that blocks movement and vision.</p>
+                        <div class="ability-cost" style="color:#ECE8E1;">Cost: 400 Credits</div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="ability-card h-100 p-3" style="background-color: rgba(15, 25, 35, 0.7); border-radius: 8px; border-left: 4px solid #FF4655;">
+                        <h4 style="color:#FF4655;">Slow Orb (Q)</h4>
+                        <p style="color:#ECE8E1;">Cast an orb that breaks into a slowing field upon impact with the ground.</p>
+                        <div class="ability-cost" style="color:#ECE8E1;">Cost: 200 Credits</div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="ability-card h-100 p-3" style="background-color: rgba(15, 25, 35, 0.7); border-radius: 8px; border-left: 4px solid #FF4655;">
+                        <h4 style="color:#FF4655;">Healing Orb (E)</h4>
+                        <p style="color:#ECE8E1;">Heal an ally or yourself to full health over a few seconds.</p>
+                        <div class="ability-cost" style="color:#ECE8E1;">Cost: Free (45s cooldown)</div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="ability-card h-100 p-3" style="background-color: rgba(15, 25, 35, 0.7); border-radius: 8px; border-left: 4px solid #FF4655;">
+                        <h4 style="color:#FF4655;">Resurrection (X)</h4>
+                        <p style="color:#ECE8E1;">Target a friendly corpse to revive them with full health after a brief channel.</p>
+                        <div class="ability-cost" style="color:#ECE8E1;">Cost: 8 Ultimate Points</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Identical CSS to Jett's page -->
+<style>
+    .agent-portrait {
+        width: 350px; 
+        height: 350px;
+        object-fit: cover;
+        background-color: #0F1923;
+        padding: 5px;
+        border: 3px solid #FF4655 !important;
+    }
+    
+    .ability-card {
+        transition: transform 0.3s ease;
+    }
+    
+    .ability-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(255, 70, 85, 0.2);
+    }
+    
+    .btn-valorant {
+        background-color: #FF4655;
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 4px;
+        transition: all 0.3s;
+    }
+    .btn-valorant:hover {
+        background-color: #BD3944;
+        color: white;
+        transform: translateY(-2px);
+    }
+</style>
+{% endblock %}

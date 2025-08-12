@@ -1,0 +1,114 @@
+{% extends "template.html" %}
+{% block title %}Killjoy - Valorant Wiki{% endblock %}
+
+{% block content %}
+<!-- Back button -->
+<div class="container mb-4">
+    <a href="{{ url_for('views.home') }}" class="btn btn-valorant">
+        <i class="bi bi-arrow-left"></i> Back to Agents
+    </a>
+</div>
+
+<div class="container py-4">
+    <div class="row align-items-center">
+        <div class="col-md-5 text-center mb-4 mb-md-0">
+            <img src="{{ url_for('static', filename='assets/img/Killjoy.png') }}" 
+                 alt="Killjoy Agent" 
+                 class="img-fluid agent-portrait rounded-circle border border-3 border-danger shadow-lg" 
+                 style="width: 350px; height: 350px; object-fit: cover; padding: 5px; background-color: #0F1923;">
+        </div>
+        <div class="col-md-7">
+            <h1 class="display-4 fw-bold" style="color:#FF4655;">Killjoy</h1>
+            <h3 class="mb-4" style="color:#ECE8E1;">The Genius Sentinel</h3>
+            <p class="lead" style="color:#ECE8E1;">
+                A brilliant inventor from Germany, Killjoy secures the battlefield with her arsenal of gadgets. Her traps and turrets make short work of anyone foolish enough to push her territory.
+            </p>
+            <div class="agent-info" style="background-color: rgba(15, 25, 35, 0.7); padding: 1.5rem; border-radius: 8px;">
+                <ul class="list-unstyled">
+                    <li class="mb-2"><strong style="color:#FF4655;">Role:</strong> <span style="color:#ECE8E1;">Sentinel</span></li>
+                    <li class="mb-2"><strong style="color:#FF4655;">Origin:</strong> <span style="color:#ECE8E1;">Germany</span></li>
+                    <li class="mb-2"><strong style="color:#FF4655;">Release Date:</strong> <span style="color:#ECE8E1;">August 4, 2020</span></li>
+                    <li class="mb-2"><strong style="color:#FF4655;">Signature Ability:</strong> <span style="color:#ECE8E1;">Turret</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <hr class="my-5" style="border-color:#FF4655; opacity: 0.5;">
+
+    <div class="row mt-4">
+        <div class="col-lg-12">
+            <h2 class="text-center mb-4" style="color:#FF4655;">Abilities</h2>
+            
+            <div class="row">
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="ability-card h-100 p-3" style="background-color: rgba(15, 25, 35, 0.7); border-radius: 8px; border-left: 4px solid #FF4655;">
+                        <h4 style="color:#FF4655;">Alarmbot (C)</h4>
+                        <p style="color:#ECE8E1;">Deploy a bot that hunts down enemies in range and explodes, applying Vulnerable to them.</p>
+                        <div class="ability-cost" style="color:#ECE8E1;">Cost: 200 Credits</div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="ability-card h-100 p-3" style="background-color: rgba(15, 25, 35, 0.7); border-radius: 8px; border-left: 4px solid #FF4655;">
+                        <h4 style="color:#FF4655;">Nanoswarm (Q)</h4>
+                        <p style="color:#ECE8E1;">Throw a grenade that deploys a damaging swarm of nanobots. Can be activated remotely.</p>
+                        <div class="ability-cost" style="color:#ECE8E1;">Cost: 200 Credits</div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="ability-card h-100 p-3" style="background-color: rgba(15, 25, 35, 0.7); border-radius: 8px; border-left: 4px solid #FF4655;">
+                        <h4 style="color:#FF4655;">Turret (E)</h4>
+                        <p style="color:#ECE8E1;">Deploy a turret that fires at enemies in a 180-degree cone. Can be recalled and redeployed.</p>
+                        <div class="ability-cost" style="color:#ECE8E1;">Cost: Free (1 charge)</div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="ability-card h-100 p-3" style="background-color: rgba(15, 25, 35, 0.7); border-radius: 8px; border-left: 4px solid #FF4655;">
+                        <h4 style="color:#FF4655;">Lockdown (X)</h4>
+                        <p style="color:#ECE8E1;">Deploy a device that detains all enemies in its radius after a long windup.</p>
+                        <div class="ability-cost" style="color:#ECE8E1;">Cost: 7 Ultimate Points</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Reused CSS (identical to Jett's) -->
+<style>
+    .agent-portrait {
+        width: 350px; 
+        height: 350px;
+        object-fit: cover;
+        background-color: #0F1923;
+        padding: 5px;
+        border: 3px solid #FF4655 !important; /* Ensures border matches Jett's */
+    }
+    
+    .ability-card {
+        transition: transform 0.3s ease;
+    }
+    
+    .ability-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(255, 70, 85, 0.2);
+    }
+    
+    .btn-valorant {
+        background-color: #FF4655;
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 4px;
+        transition: all 0.3s;
+    }
+    .btn-valorant:hover {
+        background-color: #BD3944;
+        color: white;
+        transform: translateY(-2px);
+    }
+</style>
+{% endblock %}

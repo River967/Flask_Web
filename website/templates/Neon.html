@@ -1,0 +1,114 @@
+{% extends "template.html" %}
+{% block title %}Neon - Valorant Wiki{% endblock %}
+
+{% block content %}
+<!-- Back button -->
+<div class="container mb-4">
+    <a href="{{ url_for('views.home') }}" class="btn btn-valorant">
+        <i class="bi bi-arrow-left"></i> Back to Agents
+    </a>
+</div>
+
+<div class="container py-4">
+    <div class="row align-items-center">
+        <div class="col-md-5 text-center mb-4 mb-md-0">
+            <img src="{{ url_for('static', filename='assets/img/Neon.webp') }}" 
+                 alt="Neon Agent" 
+                 class="img-fluid agent-portrait rounded-circle border border-3 border-danger shadow-lg" 
+                 style="width: 350px; height: 350px; object-fit: cover; padding: 5px; background-color: #0F1923;">
+        </div>
+        <div class="col-md-7">
+            <h1 class="display-4 fw-bold" style="color:#FF4655;">Neon</h1>
+            <h3 class="mb-4" style="color:#ECE8E1;">The Radiant Rush</h3>
+            <p class="lead" style="color:#ECE8E1;">
+                Filipino Agent Neon surges forward at shocking speeds, discharging bursts of bioelectric radiance as fast as her body generates it. She races ahead to catch enemies off guard, then strikes them down quicker than lightning.
+            </p>
+            <div class="agent-info" style="background-color: rgba(15, 25, 35, 0.7); padding: 1.5rem; border-radius: 8px;">
+                <ul class="list-unstyled">
+                    <li class="mb-2"><strong style="color:#FF4655;">Role:</strong> <span style="color:#ECE8E1;">Duelist</span></li>
+                    <li class="mb-2"><strong style="color:#FF4655;">Origin:</strong> <span style="color:#ECE8E1;">Philippines</span></li>
+                    <li class="mb-2"><strong style="color:#FF4655;">Release Date:</strong> <span style="color:#ECE8E1;">January 12, 2022</span></li>
+                    <li class="mb-2"><strong style="color:#FF4655;">Signature Ability:</strong> <span style="color:#ECE8E1;">High Gear</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <hr class="my-5" style="border-color:#FF4655; opacity: 0.5;">
+
+    <div class="row mt-4">
+        <div class="col-lg-12">
+            <h2 class="text-center mb-4" style="color:#FF4655;">Abilities</h2>
+            
+            <div class="row">
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="ability-card h-100 p-3" style="background-color: rgba(15, 25, 35, 0.7); border-radius: 8px; border-left: 4px solid #FF4655;">
+                        <h4 style="color:#FF4655;">Fast Lane (C)</h4>
+                        <p style="color:#ECE8E1;">Fire two energy lines forward that create walls of static electricity, blocking vision and damaging enemies passing through.</p>
+                        <div class="ability-cost" style="color:#ECE8E1;">Cost: 300 Credits</div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="ability-card h-100 p-3" style="background-color: rgba(15, 25, 35, 0.7); border-radius: 8px; border-left: 4px solid #FF4655;">
+                        <h4 style="color:#FF4655;">Relay Bolt (Q)</h4>
+                        <p style="color:#ECE8E1;">Throw an energy bolt that bounces once, stunning enemies near its impact point.</p>
+                        <div class="ability-cost" style="color:#ECE8E1;">Cost: 200 Credits</div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="ability-card h-100 p-3" style="background-color: rgba(15, 25, 35, 0.7); border-radius: 8px; border-left: 4px solid #FF4655;">
+                        <h4 style="color:#FF4655;">High Gear (E)</h4>
+                        <p style="color:#ECE8E1;">Gain increased speed. When charged, alternate fire to slide. Slide resets on kills.</p>
+                        <div class="ability-cost" style="color:#ECE8E1;">Cost: Free (1 charge)</div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="ability-card h-100 p-3" style="background-color: rgba(15, 25, 35, 0.7); border-radius: 8px; border-left: 4px solid #FF4655;">
+                        <h4 style="color:#FF4655;">Overdrive (X)</h4>
+                        <p style="color:#ECE8E1;">Unleash Neon's full power for a short duration. Fire to channel her power into a deadly lightning beam.</p>
+                        <div class="ability-cost" style="color:#ECE8E1;">Cost: 7 Ultimate Points</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Identical CSS to Jett's page -->
+<style>
+    .agent-portrait {
+        width: 350px; 
+        height: 350px;
+        object-fit: cover;
+        background-color: #0F1923;
+        padding: 5px;
+        border: 3px solid #FF4655 !important;
+    }
+    
+    .ability-card {
+        transition: transform 0.3s ease;
+    }
+    
+    .ability-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(255, 70, 85, 0.2);
+    }
+    
+    .btn-valorant {
+        background-color: #FF4655;
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 4px;
+        transition: all 0.3s;
+    }
+    .btn-valorant:hover {
+        background-color: #BD3944;
+        color: white;
+        transform: translateY(-2px);
+    }
+</style>
+{% endblock %}
