@@ -36,6 +36,8 @@ def contact():
             db.session.add(new_note)
             db.session.commit()
             flash('Comment Added!', category='success')
+        # Redirect after POST to prevent duplicate submissions
+        return redirect(url_for('views.contact'))
     # Render the contact page
     return render_template("contact.html", user=current_user) 
 
